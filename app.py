@@ -6,7 +6,10 @@ import tensorflow as tf
 import pickle as pkl
 
 # Load the trained model and encoders
-model = tf.keras.models.load_model('churn_model.h5')
+model = tf.keras.models.load_model(
+    'churn_model.h5',
+    compile=False
+)
 with open('scaler.pkl', 'rb') as f:
     scaler = pkl.load(f)
 with open('label_encoder_gender.pkl', 'rb') as f:
